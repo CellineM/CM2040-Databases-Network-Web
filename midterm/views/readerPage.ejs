@@ -1,0 +1,50 @@
+<!-- readerPage.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/readerPage.css">
+    <title>Reader Home</title>
+    
+</head>
+
+<body>
+    <!--title-->
+    <header>
+        <h1>Reader Home</h1>
+    </header>
+
+    <main>
+        <ul>
+            <!--loop through each recipe published in the published array-->
+            <% published.forEach(recipe=> { %>
+                <li>
+                    <!--show the recipe title but in bold-->
+                    <strong>
+                        <%= recipe.title %>
+                    </strong><br>
+                    <!--show the information needed-->
+                    Author: <%= recipe.author_name %><br>
+                        Published Date: <%= new Date(recipe.published).toLocaleDateString() %><br>
+                            Modified Date: <%= new Date(recipe.modified).toLocaleDateString() %><br>
+                                Recipe: <%= recipe.recipe_info %><br>
+                                    Number of Reads: <%= recipe.num_reads %><br>
+                                        Number of Likes: <%= recipe.num_likes %><br>
+                                            
+                                            <!--link to read the recipe article when clicking read article-->
+                                            <a href="/readerArticle/<%= recipe.id %>">Read Article</a>
+
+                </li>
+                <% }); %>
+        </ul>
+        <!--go back to home page for reader-->
+        <a href="/">Homepage</a>
+    </main> 
+
+
+</body>
+
+</html>

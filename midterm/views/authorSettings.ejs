@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Settings</title>
+    <link rel="stylesheet" type="text/css" href="/authorSettings.css">
+   
+</head>
+
+<body>
+
+    <section id="author-settings-section">
+        <h1>Author Settings Page</h1>
+
+        <!--to edit the setting if there is anything to change-->
+        <form id="settingsForm" action="/saveSettings/<%= currentSettings ? currentSettings.id : 'new' %>" method="POST" onsubmit="return validateForm()">
+
+            <!--input the title of the blog-->
+            <label for="blogTitle">Blog Title:</label>
+            <input type="text" id="blogTitle" name="blog_title" value="<%= currentSettings ? currentSettings.blog_title : '' %>" required>
+
+            <!--input the name of the author-->
+            <label for="authorName">Author Name:</label>
+            <input type="text" id="authorName" name="author_name" value="<%= currentSettings ? currentSettings.author_name : '' %>" required>
+
+            <button type="submit">Save Settings</button>
+        </form>
+
+        <a href="/authorPage">Back to Author Home</a>
+    </section>
+
+
+
+    <script>
+        // Function to validate the form
+        function validateForm() {
+
+            // getting the values from the input
+            const blogTitle = document.getElementById('blogTitle').value;
+            const authorName = document.getElementById('authorName').value;
+
+            // if not filled, will prompt
+            if (!blogTitle || !authorName) {
+                alert('Please fill in.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

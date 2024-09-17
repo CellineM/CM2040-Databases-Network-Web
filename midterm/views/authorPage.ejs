@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog Title - Author Home</title>
+    <link rel="stylesheet" type="text/css" href="/authorPage.css">
+
+</head>
+
+<body>
+    <h1>Author Homepage</h1>
+    <section id="author-section">
+        <a href="/authorCreate" id="create-new-button">Create New Draft</a>
+
+        <!--title-->
+        <h2>Draft Recipes</h2>
+        <ul>
+            <% drafts.forEach(recipe=> { %>
+                <li>
+                    <strong>
+                        <%= recipe.title %>
+                    </strong><br>
+                    Author: <%= recipe.author_name %><br>
+                        Created Date: <%= new Date(recipe.created).toLocaleDateString() %><br>
+                            Modified Date: <%= new Date(recipe.modified).toLocaleDateString() %><br>
+                                Recipe: <%= recipe.recipe_info %><br> 
+
+                                    <!--link to go to edit, setting page-->
+                                    <a href="/authorPage/edit/<%= recipe.id %>">Edit</a>
+                                    <a href="/authorSettings/<%= recipe.id %>">Settings</a>
+
+                                    <!--when clicked, the recipe articles will go to publish or delete depending on which one pressed-->
+                                    <form action="/authorPage/publish/<%= recipe.id %>" method="POST"
+                                        style="display: inline;">
+                                        <button type="submit">Publish</button>
+                                    </form>
+                                    <form action="/authorPage/delete/<%= recipe.id %>" method="POST"
+                                        style="display: inline;">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                </li>
+                <% }); %>
+        </ul>
+
+        <!-- Published Articles Section -->
+        <h2>Published Recipes</h2>
+        <ul>
+            <% published.forEach(recipe=> { %>
+                <li>
+                    <strong>
+                        <%= recipe.title %>
+                    </strong><br>
+                    Author: <%= recipe.author_name %><br>
+                        Published Date: <%= new Date(recipe.published).toLocaleDateString() %><br>
+                            Modified Date: <%= new Date(recipe.modified).toLocaleDateString() %><br>
+                                Recipe: <%= recipe.recipe_info %><br>
+                                    Number of Reads: <%= recipe.num_reads %><br>
+                                        Number of Likes: <%= recipe.num_likes %><br>
+                                            <a href="/authorPage/edit/<%= recipe.id %>">Edit</a>
+                                            <a href="/authorSettings/<%= recipe.id %>">Settings</a>
+                                            <form action="/authorPage/delete/<%= recipe.id %>" method="POST"
+                                                style="display: inline;">
+                                                <button type="submit">Delete</button>
+                                            </form>
+
+                </li>
+                <% }); %>
+        </ul>
+
+        <a href="/">Homepage</a>
+
+    </section>
+
+    <!-- Add any additional body content or scripts here -->
+
+</body>
+
+</html>

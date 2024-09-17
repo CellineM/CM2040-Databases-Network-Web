@@ -1,0 +1,87 @@
+body {
+    background-image: url('/image/authorCreateBG.jpg');
+    background-size: cover;
+    font-family: cursive;
+}
+
+h1
+{
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(54, 93, 130, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #213242;
+}
+
+p {
+    margin: 10px 0;
+    color: #152535;
+    font-weight: bold;
+}
+
+button {
+    background-color: #152535;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #263673;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 20px;
+    margin: 5px 0 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#comments-section {
+    margin-top: 20px;
+}
+
+h3
+{
+    color: #213242;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    text-align: left;   
+    color: #0e263be1;
+    text-decoration: underline;
+}
+
+

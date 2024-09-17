@@ -1,0 +1,86 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('/image/authorBG.jpg'); /*url for path to the image*/
+    background-size: cover;
+    background-position: center;
+    font-family: cursive;
+    line-height: 1.5;
+    color: #0b0b0b;
+}
+
+#author-section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgb(255, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#author-section a {
+    color: #8a27e6;
+    text-decoration: none;
+}
+
+#create-new-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #a9e487;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+strong {
+    color: #114b4f;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+li {
+    margin-bottom: 20px;
+    border-bottom: 2px dotted #474854;
+    padding-bottom: 20px;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #146343;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Style links inside list items */
+li a {
+    margin-right: 20px;
+}
+
+
+
+
+

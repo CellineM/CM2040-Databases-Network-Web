@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;;
+}
+
+body {
+    background-image: url('/image/setting.jpg'); /* path to the author background picture*/
+    background-size: cover; /*cover the web page */
+    background-position: center;
+    position: relative;
+    font-family: cursive;
+}
+
+h1
+{
+    text-align: center;
+}
+
+form
+{
+    background-color: rgba(36, 33, 33, 0.322);
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+label 
+{
+    display: block;
+    text-align: left;
+    color: #585858;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+input
+{
+    width: 100%;
+    padding: 10px;
+    margin: 4px 0 20px;
+    box-sizing: border-box;
+    border: #585858;
+    border-radius: 10px;
+}
+
+button 
+{
+    background-color: rgba(7, 35, 48, 0.3);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+a 
+{
+    font-size: 15px;
+    padding: 0 150px;
+    color: #585858;
+    text-decoration: none;
+}

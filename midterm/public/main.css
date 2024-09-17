@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-image: url('/image/background.jpg'); /*url for path to the image*/
+    background-size: cover; /*cover the screenpage*/
+    background-position: center;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-family: cursive; /*diff font*/
+    font-size: 3em; /*a bigger size of h1*/
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+}
+
+.translucentBox {
+    display: flex;
+    grid-template-columns: space-around;
+    align-items: center;
+
+}
+
+.leftside, .rightside {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 200px;
+}
+
+.leftside
+{
+    margin: 0 300px;
+}
+
+.rightside {
+
+    margin: -200px -40px;
+}
+
+a:visited
+{
+    color: black;
+}
+
+a:active
+{
+    color: lightslategray;
+}

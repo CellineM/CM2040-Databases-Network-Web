@@ -1,0 +1,83 @@
+<!-- readerArticle.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reader Article Page</title>
+    <link rel="stylesheet" type="text/css" href="/readerArticle.css">
+
+</head>
+
+<body>
+    <!--title-->
+    <header>
+        <h1>Reader Article Page</h1>
+    </header>
+
+    <main>
+        <article>
+            <!--show the title of the article-->
+            <h2>
+                <%= article.title %>
+            </h2>
+            <!--showing the information needed of the recipe article-->
+            <p>Author: <%= article.author_name %></p>
+            <p>Published Date: <%= new Date(article.published).toLocaleDateString() %></p>
+            <p>Number of Views: <%= article.num_reads %></p>
+            <p>Number of Likes: <%= article.num_likes %></p>
+
+            <!--showing the main content of the recipe-->
+            <p>
+                <%= article.text %>
+            </p>
+
+            <!-- Like button -->
+            <form action="/readerArticle/<%= article.id %>/like" method="post">
+                <button type="submit">Like</button>
+            </form>
+
+            <!-- Comment -->
+            <form action="/readerArticle/<%= article.id %>/comment" method="post">
+                <label for="readerName">Your Name:</label>
+                <input type="text" id="readerName" name="readerName" required>
+
+                <label for="readerText">Comment:</label>
+                <textarea id="readerText" name="readerText" rows="4" required></textarea>
+
+                <button type="submit">Submit Comment</button>
+            </form>
+
+
+            <section id="comments-section">
+                <h3>Reader Comments</h3>
+                <ul>
+                    <!--see if there's any comment, if yes the loop and show the comment-->
+                    <% if (article.comments && article.comments.length> 0) { %>
+                        <% article.comments.forEach(comment=> { %>
+                            <li>
+                                <strong>
+                                    <%= comment.readerName %>
+                                </strong> -
+                                <!--show the info like the date and comment-->
+                                <%= new Date(comment.date).toLocaleString() %><br>
+                                    <%= comment.readerText %>
+                            </li>
+                            <% }); %>
+                                <% } else { %>
+                                    <!--if no comment added-->
+                                    <li>No comments yet.</li>
+                                    <% } %>
+                </ul>
+            </section>
+
+
+            <!-- reader homepage button -->
+            <a href="/readerPage">Reader Home</a>
+        </article>
+    </main>
+</body>
+
+</html>

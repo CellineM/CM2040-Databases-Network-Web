@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Content</title>
+    <link rel="stylesheet" type="text/css" href="/authorCreate.css">
+
+</head>
+
+<body>
+
+    <h1>New Recipe</h1>
+
+    <!--post to authorCreate-->
+    <form action="authorCreate" method="post"> 
+
+        <!--input the date-->
+        <label for="createdDate"> Created Date: </label>
+        <input id="createdDate" type="date" name="created-date" required />
+
+        <!--input the author name-->
+        <label for="authorName">Author Name:</label>
+        <input id="authorName" type="text" name="author-name" required />
+
+        <!--input the title of the recipes-->
+        <label for="blogTitle"> Title: </label>
+        <input id="blog" type="text" name="blog-title" />
+
+        <!--input the recipes or ingredients needed-->
+        <label for="recipeInfo"> Recipe: </label>
+        <textarea id="recipe" type="text" name="recipe-info"></textarea>
+
+        <!--submit button to save the recipe-->
+        <button type="submit"> Save </button>
+
+    </form>
+
+    <!--go back to the author homepage-->
+    <a href="/authorPage">Author Homepage</a>
+    </section>
+
+</body>
+
+</html>

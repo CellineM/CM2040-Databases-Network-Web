@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Content</title>
+    <link rel="stylesheet" type="text/css" href="/authorEdit.css">
+</head>
+
+<body>
+
+    <section id="create-content-section">
+
+        <h1>Edit Recipe</h1>
+
+        <!--where the form goes when the edit is submitted-->
+        <form action="/authorPage/edit/<%= locals.id %>" method="POST">
+            
+            <label for="blog-title">Title:</label>
+            <input id="blog-title" type="text" name="title" value="<%= locals.title %>" required>
+        
+            <!--input the recipe if there's anything to change-->
+            <label for="recipe-info">Recipe:</label>
+            <textarea id="recipe-info" type="text" name="recipe_info" required><%= locals.recipe_info %></textarea>
+        
+        
+            <!-- Add a submit button -->
+            <button type="submit">Submit Changes</button>
+        </form>
+
+        <a href="/authorPage">Author Homepage</a>
+    </section>
+
+</body>
+
+</html>
